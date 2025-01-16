@@ -3,8 +3,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { OrderSuccessModalComponent } from '../order-success-modal/order-success-modal.component';
 import { ErrorHandlerService } from 'src/app/error-handler.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-products',
@@ -41,6 +41,7 @@ export class GetProductsComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private fb: FormBuilder,
+    private router: Router,
     private snackBar: MatSnackBar,
     private errorHandler: ErrorHandlerService
     ) { }
@@ -167,12 +168,14 @@ export class GetProductsComponent implements OnInit {
         next: (response) => {
           console.log(response);
           //alert('Order placed successfully');
-          this.snackBar.open('Order placed successfully.', 'Close', {
-            duration: 3000,
-            verticalPosition: 'bottom',
-            horizontalPosition: 'center'
-          });
-          // Reset the form and show the product list again
+          // this.snackBar.open('Order placed successfully.', 'Close', {
+          //   duration: 3000,
+          //   verticalPosition: 'bottom',
+          //   horizontalPosition: 'center'
+          // });
+
+          this.router.navigate(['/dashboard/order-success']);
+          
 
 
           this.selectedProduct = null;

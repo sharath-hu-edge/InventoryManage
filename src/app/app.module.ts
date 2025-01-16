@@ -22,8 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminCreateEmpComponent } from './components/admin-create-emp/admin-create-emp.component';
 import { ProductManagementComponent } from './components/product-management/product-management.component';
 import { CustomerOrdersComponent } from './components/customer-orders/customer-orders.component';
-import { OrderSuccessModalComponent } from './components/order-success-modal/order-success-modal.component';
 import { CustomErrorComponent } from './components/custom-error/custom-error.component';
+import { MatIconModule } from '@angular/material/icon';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
+
 
 
 
@@ -45,8 +47,8 @@ import { CustomErrorComponent } from './components/custom-error/custom-error.com
     AdminCreateEmpComponent,
     ProductManagementComponent,
     CustomerOrdersComponent,
-    OrderSuccessModalComponent,
-    CustomErrorComponent
+    CustomErrorComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { CustomErrorComponent } from './components/custom-error/custom-error.com
     FormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

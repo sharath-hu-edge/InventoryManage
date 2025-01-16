@@ -35,7 +35,8 @@ export class AdminLoginComponent {
     if (this.loginForm.valid) {
       this.http.post('http://localhost:5269/api/Admin/login', this.loginForm.value).subscribe({
         next: (response: any) => {
-          this.authService.login();
+          const token = response.Token;
+          this.authService.login(token);
           sessionStorage.setItem('adminId', response.adminId);
           sessionStorage.setItem('isSuperUser', response.isSuperUser);
           sessionStorage.setItem('userName', response.userName);

@@ -19,6 +19,7 @@ import { AdminCreateEmpComponent } from './components/admin-create-emp/admin-cre
 import { ProductManagementComponent } from './components/product-management/product-management.component';
 import { CustomerOrdersComponent } from './components/customer-orders/customer-orders.component';
 import { CustomErrorComponent } from './components/custom-error/custom-error.component';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'login', pathMatch:'full'},
@@ -53,13 +54,12 @@ const routes: Routes = [
       { path: 'create-emp', component: AdminCreateEmpComponent},
       { path: 'manage-product', component: ProductManagementComponent},
       { path: 'customer-orders', component: CustomerOrdersComponent},
-
-
+      { path: 'order-success', component: OrderSuccessComponent},
 
      ]
     },
   { path: 'error', component: CustomErrorComponent },
-  { path: '**', redirectTo: 'login'}
+  { path: '**', redirectTo: 'error'}
 ];
 
 @NgModule({

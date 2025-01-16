@@ -1,0 +1,63 @@
+.order-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    animation: backgroundAnimation 10s infinite alternate;
+  }
+  
+  .order-success-content {
+    text-align: center;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkmark-circle {
+    width: 100px;
+    height: 100px;
+    background: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+    animation: checkmarkAnimation 1s ease-in-out;
+  }
+  
+  .checkmark-circle i {
+    color: #ffffff;
+    font-size: 2.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #666666;
+  }
+  
+  @keyframes checkmarkAnimation {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes backgroundAnimation {
+    0% {
+      background: linear-gradient(135deg, #e0f7fa, #80deea);
+    }
+    100% {
+      background: linear-gradient(135deg, #80deea, #e0f7fa);
+    }
+  }
+  

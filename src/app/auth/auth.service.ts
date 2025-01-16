@@ -1,4 +1,5 @@
 // src/app/auth/auth.service.ts
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,21 +7,27 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private loggdIn = false;
+  private tokenKey = 'authToken';
 
   constructor(private router: Router) {}
 
-  isLoggedIn(): boolean{
-    return this.loggdIn;
+  // isLoggedIn(): boolean {
+  //   return this.getToken() !== null;
+  // }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem(this.tokenKey);
   }
 
-  login(): void {
-    this.loggdIn = true;
+  login(token: string): void {
+    localStorage.setItem(this.tokenKey, token);
   }
 
   logout(): void {
-    this.loggdIn = false;
+    localStorage.removeItem(this.tokenKey);
   }
 
-  
+  getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
+  }
 }
