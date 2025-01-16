@@ -3,6 +3,7 @@ import { HttpClient, HttpEventType, HttpParams } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FileUploadService } from 'src/app/services/file-upload.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-management',
@@ -63,7 +64,7 @@ export class ProductManagementComponent implements OnInit {
       ]),
       description: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[a-zA-Z ]{4,}$/)
+        Validators.pattern(/^[a-zA-Z0-9 ]{4,}$/)
       ]),
       brand: new FormControl('', [
         Validators.required,

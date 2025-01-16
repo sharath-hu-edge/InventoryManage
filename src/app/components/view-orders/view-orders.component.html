@@ -6,14 +6,17 @@
       <div class="row mb-3">
           <div class="col">
               <label for="orderId" class="form-label">Order ID</label>
-              <input type="number" id="orderId" class="form-control" [(ngModel)]="orderId" name="orderId">
+              <input type="number" id="orderId" class="form-control" (change)="getOrders()" [(ngModel)]="orderId" name="orderId">
           </div>
           <div class="col">
               <label for="createdDate" class="form-label">Created Date</label>
-              <input type="date" id="createdDate" class="form-control" [(ngModel)]="createdDate" name="createdDate">
-          </div>
+              <input type="date" id="createdDate" class="form-control" (change)="getOrders()"  [(ngModel)]="createdDate" name="createdDate">
+          </div>       
       </div>
-      <button type="submit" class="btn btn-primary">Filter Orders</button>
+      <!--<button class="btn  btn-sm me-2" data-toggle="tooltip" title="Clear" (click)="clearInput()" >
+        <i class="fas fa-times"></i>
+      </button>-->
+      <!--<button type="submit" class="btn btn-primary">Filter Orders</button>-->
   </form>
 
   <!-- Orders List -->

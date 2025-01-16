@@ -36,17 +36,17 @@
                 <p class="card-text"><strong>Brand:</strong> {{ product.brand }}</p>
                 <p class="card-text"><strong>Price:</strong> {{ product.price | currency:'INR':'symbol' }}</p>
                 
-                <div class="d-flex justify-content-between">
-                  <button class="btn btn-secondary" (click)="editProduct(product)" data-toggle="tooltip" title="Edit Product">
+                <div class="d-flex  align-items-center">
+                  <button class="btn btn-secondary btn-sm mx-1" (click)="editProduct(product)" data-toggle="tooltip" title="Edit Product">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger" (click)="deleteProduct(product)" data-toggle="tooltip" title="Delete Product">
+                  <button class="btn btn-danger btn-sm mx-1" (click)="deleteProduct(product)" data-toggle="tooltip" title="Delete Product">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-                  <button *ngIf="product.ststus === 1" class="btn btn-success" (click)="updateStatus(0,product)" data-toggle="tooltip" title="Deactivate Product">
+                  <button *ngIf="product.ststus === 1" class="btn btn-success btn-sm mx-1" (click)="updateStatus(0,product)" data-toggle="tooltip" title="Deactivate Product">
                     <i class="fas fa-times"></i>
                   </button>
-                  <button *ngIf="product.ststus === 0" class="btn btn-danger" (click)="updateStatus(1,product)" data-toggle="tooltip" title="Activate Product">
+                  <button *ngIf="product.ststus === 0" class="btn btn-danger btn-sm mx-1" (click)="updateStatus(1,product)" data-toggle="tooltip" title="Sell Product">
                     <i class="fas fa-check"></i>
                   </button>
                 </div>

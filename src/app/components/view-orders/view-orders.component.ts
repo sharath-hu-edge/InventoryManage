@@ -126,5 +126,9 @@ export class ViewOrdersComponent implements OnInit {
     });
   }
   
-  
+  clearInput() {
+    this.orderId = 0; // Reset to default value
+    this.createdDate = ''; // Reset to default value
+    this.getOrders(); // Optionally, you can call getOrders to refresh the list
+  }
 }
