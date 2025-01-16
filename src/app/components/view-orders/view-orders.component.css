@@ -1,0 +1,90 @@
+/* Custom styles for the order summary */
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.order-card .order-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-card .card-body {
+  padding: 20px;
+}
+
+.order-card .action-buttons {
+  text-align: center;
+}
+
+.order-card .btn {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .order-card .card-body {
+      padding: 10px;
+  }
+
+  .order-card .action-buttons {
+      text-align: left;
+  }
+}
+
+/* Custom styles for the no orders card */
+.no-orders-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  background-color: #fff;
+}
+
+.no-orders-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.no-orders-text {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Styles for the printable invoice */
+.invoice {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.invoice-content {
+  font-size: 16px;
+  color: #555;
+}
+
+.invoice-details p {
+  margin: 10px 0;
+}
+
+.invoice-details p strong {
+  color: #000;
+}
+

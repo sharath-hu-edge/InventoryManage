@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">My Orders</h1>
+
+  <!-- Filter Form -->
+  <form (ngSubmit)="getOrders()" class="filter-form mb-4" *ngIf="orders.length > 0">
+      <div class="row mb-3">
+          <div class="col">
+              <label for="orderId" class="form-label">Order ID</label>
+              <input type="number" id="orderId" class="form-control" [(ngModel)]="orderId" name="orderId">
+          </div>
+          <div class="col">
+              <label for="createdDate" class="form-label">Created Date</label>
+              <input type="date" id="createdDate" class="form-control" [(ngModel)]="createdDate" name="createdDate">
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Filter Orders</button>
+  </form>
+
+  <!-- Orders List -->
+  <div *ngIf="orders.length > 0; else noOrders">
+      <div *ngFor="let order of orders; let i = index" class="order-card mb-4">
+          <div class="row g-0">
+              <div class="col-md-2">
+                  <img [src]="order.image" class="img-fluid rounded-start order-image" alt="Product Image">
+              </div>
+              <div class="col-md-7">
+                  <div class="card-body">
+                      <h2 class="card-title">{{ order.productName }}</h2>
+                      <p class="card-text"><strong>Order ID:</strong> {{ order.orderId }}</p>  
+                      <p class="card-text"><strong>Seller Name:</strong> {{ order.userName }}</p>                     
+
+                      <p class="card-text"><strong>Total Price:</strong> {{ order.totalPrice | currency:'INR' }}</p>
+                      <p class="card-text"><strong>Order Date:</strong> {{ order.createdDate | date }}</p>
+                  </div>
+              </div>
+              <div class="col-md-3 d-flex align-items-center justify-content-center">
+                  <div class="action-buttons">
+                      <p class="card-text"><strong>Status:</strong> {{ order.orderStatus == 1 ? 'Order Placed' : 'Order Cancelled' }}</p>
+                      <button class="btn btn-danger btn-sm me-2" data-toggle="tooltip" title="Cancel" (click)="cancelOrder(order.orderId)" [disabled]="order.orderStatus == 0">
+                          <i class="fas fa-times"></i>
+                      </button>
+                      <button class="btn btn-secondary btn-sm" data-toggle="tooltip" title="Download" (click)="downloadOrder(order)">
+                          <i class="fas fa-download"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- No Orders Template -->
+  <ng-template #noOrders>
+    <div class="no-orders-card text-center">
+        <img src="data:image/jpeg;base64,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" alt="No Orders" class="no-orders-image">
+        <p class="no-orders-text">No orders found</p>
+    </div>
+</ng-template>
+
+
+  <!-- Print Template -->
+  <!-- Print Template -->
+<div id="printSection" style="display: none;">
+  <div class="invoice">
+      <h2 class="invoice-title">Invoice</h2>
+      <div *ngIf="printOrderData" class="invoice-content">
+          <div class="invoice-details">
+              <p><strong>Order ID:</strong> {{ printOrderData.orderId }}</p>
+              <p><strong>Order Name:</strong> {{ printOrderData.orderName }}</p>
+              <p><strong>Supplier Name:</strong> {{ printOrderData.supplierName }}</p>
+              <p><strong>Supplier Email:</strong> {{ printOrderData.supplierEmail }}</p>
+              <p><strong>Status:</strong> {{ printOrderData.status }}</p>
+              <p><strong>Total Price:</strong> {{ printOrderData.totalPrice | currency:'INR' }}</p>
+              <p><strong>Order Date:</strong> {{ printOrderData.createdDate | date }}</p>
+          </div>
+      </div>
+  </div>
+</div>
+

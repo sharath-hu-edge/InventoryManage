@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Create Supplier</h1>
+    <form (ngSubmit)="createSupplier()" class="p-4 shadow rounded bg-light">
+      <div class="form-group mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="supplier.name" name="name" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="contactInfo" class="form-label">Contact Info</label>
+        <input type="text" class="form-control" id="contactInfo" [(ngModel)]="supplier.contactInfo" name="contactInfo" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="supplier.email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Create Supplier</button>
+    </form>
+  </div>
+  

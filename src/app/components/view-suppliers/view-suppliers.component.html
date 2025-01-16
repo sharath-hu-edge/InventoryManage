@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h1 class="text-center">Supplier List</h1>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Supplier ID</th>
+          <th>Name</th>
+          <th>Contact Info</th>
+          <th>Email</th>
+          <th>Created Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let supplier of suppliers">
+          <td>{{ supplier.supplierId }}</td>
+          <td>{{ supplier.name }}</td>
+          <td>{{ supplier.contactInfo }}</td>
+          <td>{{ supplier.email }}</td>
+          <td>{{ supplier.createdDate | date }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteSupplier(supplier.supplierId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

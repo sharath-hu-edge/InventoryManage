@@ -1,0 +1,20 @@
+/* src/app/custom-error/custom-error.component.css */
+.error-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .error-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .error-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .error-container .btn {
+    font-size: 1em;
+  }
+  

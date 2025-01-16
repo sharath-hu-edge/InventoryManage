@@ -1,0 +1,69 @@
+/* Custom styles for the product grid and order form */
+.container {
+  max-width: 1200px;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.order-form .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-form .card-body {
+  padding: 20px;
+}
+
+.order-form .form-group {
+  margin-bottom: 15px;
+}
+
+.order-form .btn-success {
+  width: auto;
+}
+
+.order-form .order-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-form .form-group.d-flex {
+  align-items: center;
+}
+
+.order-form .btn-secondary {
+  padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .order-form .card-body {
+    padding: 10px;
+  }
+}
+.long-search-bar {
+  width: 100%;
+}
+
+.form-label {
+  margin-bottom: 0;
+}
+
+.d-flex .form-control {
+  flex: 1;
+}
+
+button.btn-primary {
+  white-space: nowrap;
+}
+align-items-center {
+  background-color: antiquewhite;
+}
